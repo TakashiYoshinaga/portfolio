@@ -638,16 +638,62 @@ h1, h2, h3, h4 {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+.journey-card__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .55rem;
+  margin-top: .6rem;
+}
 .journey-card__cta {
-  margin-top: .35rem;
   display: inline-flex;
   align-items: center;
-  gap: .35rem;
-  color: var(--accent);
+  justify-content: center;
+  gap: .45rem;
+  min-height: 38px;
+  padding: .55rem .75rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
   font-family: var(--font-display);
-  font-size: .8rem;
+  font-size: .78rem;
   font-weight: 600;
-  letter-spacing: .04em;
+  line-height: 1;
+  transition: transform .2s ease, border-color .2s ease, background .2s ease, color .2s ease;
+}
+.journey-card__cta:hover {
+  transform: translateY(-1px);
+}
+.journey-card__cta--primary {
+  color: #06121e;
+  background: var(--grad-1);
+  border-color: transparent;
+  box-shadow: 0 10px 30px -18px rgba(34, 211, 238, .65);
+}
+.journey-card__cta--secondary {
+  color: var(--text);
+  background: rgba(34, 211, 238, .09);
+  border-color: rgba(34, 211, 238, .34);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .02);
+}
+.journey-card__cta--secondary:hover {
+  color: var(--text);
+  border-color: rgba(34, 211, 238, .58);
+  background: rgba(34, 211, 238, .14);
+  box-shadow: 0 10px 30px -20px rgba(34, 211, 238, .55);
+}
+.journey-card__lang {
+  display: inline-grid;
+  place-items: center;
+  min-width: 2.15rem;
+  height: 1.35rem;
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: .62rem;
+  letter-spacing: .08em;
+  background: rgba(5, 7, 13, .32);
+}
+.journey-card__cta--secondary .journey-card__lang {
+  color: #06121e;
+  background: var(--accent);
 }
 
 /* =========================================================
@@ -1286,6 +1332,8 @@ h1, h2, h3, h4 {
   .brand__mark { width: 32px; height: 32px; font-size: .8rem; }
 
   .hero__title { font-size: clamp(2.1rem, 11vw, 3rem); }
+  .journey-card__links { display: grid; }
+  .journey-card__cta { width: 100%; }
 }
 
 /* tablet hover devices have no hover */
