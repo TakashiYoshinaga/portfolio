@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#05070d" />
+  <meta name="description" content="Takashi Yoshinaga — Augmented Reality / Visualization / Motion Sensing. Portfolio of XR research, prototypes, open-source repositories and tutorials." />
+  <title>Takashi Yoshinaga — XR Researcher / Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Background fx -->
+  <div class="bg-fx" aria-hidden="true">
+    <div class="bg-fx__grid"></div>
+    <div class="bg-fx__glow bg-fx__glow--1"></div>
+    <div class="bg-fx__glow bg-fx__glow--2"></div>
+    <div class="bg-fx__glow bg-fx__glow--3"></div>
+    <div class="bg-fx__noise"></div>
+  </div>
+
+  <!-- Skip link -->
+  <a href="#hero" class="skip">Skip to content</a>
+
+  <!-- Header -->
+  <header class="site-header" id="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="#hero" aria-label="Takashi Yoshinaga - Home">
+        <span class="brand__mark" aria-hidden="true">TY</span>
+        <span class="brand__name">
+          <span class="brand__name-line1">Takashi Yoshinaga</span>
+          <span class="brand__name-line2">XR Researcher</span>
+        </span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <ul class="site-nav__list">
+          <li><a href="#about">About</a></li>
+          <li><a href="#works">Works</a></li>
+          <li><a href="#hobby">Prototypes</a></li>
+          <li><a href="#github">GitHub</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="menu-btn" id="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile menu overlay -->
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <nav aria-label="Mobile primary">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#works">Works</a></li>
+        <li><a href="#hobby">Prototypes</a></li>
+        <li><a href="#github">GitHub</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main>
+    <!-- HERO ============================================================ -->
+    <section class="hero" id="hero">
+      <div class="container hero__inner">
+        <p class="eyebrow">Portfolio ／ 2026</p>
+
+        <h1 class="hero__title">
+          <span class="hero__title-line">
+            <span>Augmenting reality,</span>
+          </span>
+          <span class="hero__title-line">
+            <span class="grad-text">visualizing</span>
+          </span>
+          <span class="hero__title-line">
+            <span>the invisible.</span>
+          </span>
+        </h1>
+
+        <p class="hero__lede">
+          I'm Takashi Yoshinaga — an XR researcher based in Japan. I work on R&D that applies AR, visualization, and sensing technologies to solve problems across diverse fields, while also developing metaverse systems and personal XR prototypes.
+        </p>
+
+        <ul class="tag-row" aria-label="Topics">
+          <li class="tag">Augmented Reality</li>
+          <li class="tag">Visualization</li>
+          <li class="tag">Sensing</li>
+          <li class="tag">XR Prototyping</li>
+        </ul>
+
+        <div class="hero__cta">
+          <a href="#works" class="btn btn--primary">
+            <span>View Works</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#hobby" class="btn btn--ghost">
+            <span>Browse Prototypes</span>
+          </a>
+        </div>
+
+        <a href="#about" class="scroll-cue" aria-label="Scroll down">
+          <span>Scroll</span>
+          <span class="scroll-cue__line" aria-hidden="true"></span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ABOUT =========================================================== -->
+    <section class="section" id="about">
+      <div class="container">
+        <header class="section__head fade-in">
+          <p class="eyebrow"><span class="dot" aria-hidden="true"></span><span>01 ／ About</span></p>
+          <h2 class="section__title">Researcher in AR & Visualization</h2>
+          <p class="section__sub">
+            With Avaxia Asia LTD and ISIT (Institute of Systems, Information Technologies and nanotechnologies). I research and build XR applications for medical imaging, medical training, motion sensing, civil engineering, and other domains, alongside metaverse systems and visualization interfaces.
+          </p>
+        </header>
+
+        <div class="about-grid">
+          <figure class="about__photo fade-in">
+            <img src="https://vizyoshinaga.sakura.ne.jp/wp/wp-content/uploads/2026/02/TakashiYoshinaga-Prof2026.jpg"
+                 alt="Portrait of Takashi Yoshinaga"
+                 loading="lazy"
+                 width="600" height="600" />
+            <span class="about__photo-ring" aria-hidden="true"></span>
+          </figure>
+
+          <div class="about__body fade-in">
+            <dl class="kv">
+              <div>
+                <dt>Name</dt>
+                <dd>Takashi Yoshinaga（吉永 崇）</dd>
+              </div>
+              <div>
+                <dt>Degree</dt>
+                <dd>Ph.D. in Engineering</dd>
+              </div>
+              <div>
+                <dt>Affiliation</dt>
+                <dd class="affiliation-list">
+                  <span>Avaxia Asia LTD</span>
+                  <span>ISIT (Institute of Systems, Information Technologies and nanotechnologies)</span>
+                </dd>
+              </div>
+              <div>
+                <dt>Title</dt>
+                <dd>Expert XR Consultant</dd>
+              </div>
+              <div>
+                <dt>Expertise</dt>
+                <dd>Augmented Reality, Visualization, Sensing</dd>
+              </div>
+              <div>
+                <dt>Contact</dt>
+                <dd><span class="mono">yoshinaga&nbsp;[at]&nbsp;isit.or.jp</span></dd>
+              </div>
+            </dl>
+
+            <ul class="social" aria-label="Social profiles">
+              <li><a href="https://www.linkedin.com/in/takashi-yoshinaga/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5A2.5 2.5 0 1 1 5 8.5a2.5 2.5 0 0 1-.02-5zM3 9.75h4v11.5H3v-11.5zM9.5 9.75h3.83v1.57h.05c.53-1 1.84-2.06 3.79-2.06 4.05 0 4.8 2.67 4.8 6.14v5.85h-4v-5.19c0-1.24-.02-2.83-1.72-2.83-1.72 0-1.99 1.34-1.99 2.73v5.29h-4v-11.5z"/></svg>
+              </a></li>
+              <li><a href="https://twitter.com/Yoshinaga_AR" target="_blank" rel="noopener" aria-label="X (Twitter)">
+                <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M18.244 2H21l-6.51 7.44L22 22h-6.828l-4.78-6.243L4.8 22H2l7.02-8.02L2 2h6.914l4.32 5.71L18.244 2zm-2.39 18h1.84L7.27 4H5.32l10.534 16z"/></svg>
+              </a></li>
+              <li><a href="https://www.facebook.com/takashi.yoshinaga.39" target="_blank" rel="noopener" aria-label="Facebook">
+                <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.77l-.44 2.89h-2.33v6.99A10 10 0 0 0 22 12z"/></svg>
+              </a></li>
+              <li><a href="https://www.youtube.com/@TakashiYoshinaga" target="_blank" rel="noopener" aria-label="YouTube">
+                <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M23.5 7.2a3 3 0 0 0-2.1-2.1C19.5 4.5 12 4.5 12 4.5s-7.5 0-9.4.6A3 3 0 0 0 .5 7.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 4.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-4.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>
+              </a></li>
+            </ul>
+          </div>
+        </div>
+
+        <aside class="journey fade-in" aria-labelledby="journey-heading">
+          <header class="journey__head">
+            <p class="eyebrow"><span class="dot" aria-hidden="true"></span><span>My Journey</span></p>
+            <h3 class="journey__heading" id="journey-heading">Read the story</h3>
+            <p class="journey__lede">
+              I wrote about how XR became my career — from early AR experiments to current work.
+            </p>
+          </header>
+          <ul class="journey__list">
+            <li>
+              <a class="journey-card" href="https://avaxia-asia.co.jp/en/info/xr-ar-vr-1-1/" target="_blank" rel="noopener">
+                <span class="journey-card__thumb">
+                  <img src="https://avaxia-asia.co.jp/wp-content/uploads/2026/03/thumb.jpg"
+                       alt="" loading="lazy" width="800" height="450" />
+                </span>
+                <span class="journey-card__body">
+                  <span class="journey-card__eyebrow">Part 1 ／ 2</span>
+                  <span class="journey-card__title">XR / AR / VR Overview (1/2)</span>
+                  <span class="journey-card__lede">How I first encountered AR and what kept me in the field.</span>
+                  <span class="journey-card__cta">
+                    Read on Avaxia
+                    <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a class="journey-card" href="https://avaxia-asia.co.jp/en/info/xr-ar-vr-1-2/" target="_blank" rel="noopener">
+                <span class="journey-card__thumb">
+                  <img src="https://avaxia-asia.co.jp/wp-content/uploads/2026/03/thumb.jpg"
+                       alt="" loading="lazy" width="800" height="450" />
+                </span>
+                <span class="journey-card__body">
+                  <span class="journey-card__eyebrow">Part 2 ／ 2</span>
+                  <span class="journey-card__title">XR / AR / VR Overview (2/2)</span>
+                  <span class="journey-card__lede">From research to consulting — what XR looks like today and tomorrow.</span>
+                  <span class="journey-card__cta">
+                    Read on Avaxia
+                    <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </span>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- WORKS =========================================================== -->
+    <section class="section" id="works">
+      <div class="container">
+        <header class="section__head fade-in">
+          <p class="eyebrow"><span class="dot" aria-hidden="true"></span><span>02 ／ Works</span></p>
+          <h2 class="section__title">Research & Engagements</h2>
+          <p class="section__sub">
+            Selected AR and visualization projects across medicine, sports, and civil engineering.
+          </p>
+        </header>
+
+        <div class="works-accordion fade-in" id="works-accordion">
+
+          <!-- Genre 1: AR Echography -->
+          <section class="genre" data-genre="echo">
+            <h3 class="genre__heading">
+              <button class="genre__trigger" type="button"
+                      aria-expanded="false" aria-controls="genre-panel-echo"
+                      id="genre-trigger-echo">
+                <span class="genre__cover" style="background-image:url('https://img.youtube.com/vi/Dpuc243qCzw/hqdefault.jpg')" aria-hidden="true"></span>
+                <span class="genre__meta">
+                  <span class="genre__eyebrow">Theme 01</span>
+                  <span class="genre__title">AR Echography</span>
+                  <span class="genre__desc">A line of research that supports echography with AR — overlaying anatomy, probe pose, and procedural memory to help unskilled or remote operators.</span>
+                  <span class="genre__count">4 projects</span>
+                </span>
+                <span class="genre__chev" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="22" height="22"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+              </button>
+            </h3>
+            <div class="genre__panel" id="genre-panel-echo" role="region" aria-labelledby="genre-trigger-echo" hidden>
+              <div class="genre__panel-inner">
+                <div class="work-grid">
+                  <article class="work-card">
+                    <div class="work-card__media"><div class="yt-embed" data-vid="Dpuc243qCzw" data-title="Internal Organ Overlay"></div></div>
+                    <div class="work-card__body">
+                      <h3>Internal Organ Overlay</h3>
+                      <p>
+                        Pre-recorded organ shape and probe pose from a skilled physician are visualized to help unskilled physicians acquire echograms.
+                      </p>
+                    </div>
+                  </article>
+
+                  <article class="work-card">
+                    <div class="work-card__media"><div class="yt-embed" data-vid="zI8S49qpiOs" data-title="HMD Cross-Section Overlay"></div></div>
+                    <div class="work-card__body">
+                      <h3>HMD Cross-Section Overlay</h3>
+                      <p>
+                        The ultrasound cross section is superimposed onto the view of a physician wearing HoloLens or Magic Leap, built on markerless tracking and real-time pose/image streaming.
+                      </p>
+                    </div>
+                  </article>
+
+                  <article class="work-card">
+                    <div class="work-card__media"><div class="yt-embed" data-vid="GY3UlelftKU" data-title="Remote Instruction"></div></div>
+                    <div class="work-card__body">
+                      <h3>Remote Instruction</h3>
+                      <p>
+                        A remote doctor instructs probe operation through AR. Operation transfer was achieved with visual information alone.
+                      </p>
+                    </div>
+                  </article>
+
+                  <article class="work-card">
+                    <div class="work-card__media"><div class="yt-embed" data-vid="l4UIc49jXsM" data-title="Dynamic Body Mark"></div></div>
+                    <div class="work-card__body">
+                      <h3>Dynamic Body Mark</h3>
+                      <p>
+                        Volumetric video records and visualizes the echography procedure — useful both as a medical-skill archive and for tele-collaboration.
+                      </p>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Genre 2: Wearable Motion Sensing -->
+          <section class="genre" data-genre="motion">
+            <h3 class="genre__heading">
+              <button class="genre__trigger" type="button"
+                      aria-expanded="false" aria-controls="genre-panel-motion"
+                      id="genre-trigger-motion">
+                <span class="genre__cover" style="background-image:url('https://img.youtube.com/vi/iHlOLLHfhds/hqdefault.jpg')" aria-hidden="true"></span>
+                <span class="genre__meta">
+                  <span class="genre__eyebrow">Theme 02</span>
+                  <span class="genre__title">Wearable Motion Sensing</span>
+                  <span class="genre__desc">Motion sensing for sports and rehabilitation, built from wearable IMU, EMG and camera sensors.</span>
+                  <span class="genre__count">2 projects</span>
+                </span>
+                <span class="genre__chev" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="22" height="22"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+              </button>
+            </h3>
+            <div class="genre__panel" id="genre-panel-motion" role="region" aria-labelledby="genre-trigger-motion" hidden>
+              <div class="genre__panel-inner">
+                <div class="work-grid">
+                  <article class="work-card">
+                    <div class="work-card__media"><div class="yt-embed" data-vid="iHlOLLHfhds" data-title="IMU + SLAM Motion Capture"></div></div>
+                    <div class="work-card__body">
+                      <h3>IMU + SLAM Motion Capture</h3>
+                      <p>
+                        IMUs capture joint angles without occlusion; a SLAM sensor tracks body position in space. Also applied to full-body tracking and sports sensing.
+                      </p>
+                    </div>
+                  </article>
+
+                  <article class="work-card">
+                    <div class="work-card__media"><div class="yt-embed" data-vid="pULDFD-bDgE" data-title="Rehabilitation Game"></div></div>
+                    <div class="work-card__body">
+                      <h3>Rehabilitation Game</h3>
+                      <p>
+                        A rehabilitation game that turns hand training into play — a character moves forward while the patient holds their arm horizontal, and steers by tilting the hand.
+                      </p>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Genre 3: Collaborative Research -->
+          <section class="genre" data-genre="collab">
+            <h3 class="genre__heading">
+              <button class="genre__trigger" type="button"
+                      aria-expanded="false" aria-controls="genre-panel-collab"
+                      id="genre-trigger-collab">
+                <span class="genre__cover" style="background-image:url('https://img.youtube.com/vi/pPT0RLVDzZA/hqdefault.jpg')" aria-hidden="true"></span>
+                <span class="genre__meta">
+                  <span class="genre__eyebrow">Theme 03</span>
+                  <span class="genre__title">Collaborative Research</span>
+                  <span class="genre__desc">Joint projects with medical and civil-engineering research groups.</span>
+                  <span class="genre__count">2 projects</span>
+                </span>
+                <span class="genre__chev" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="22" height="22"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+              </button>
+            </h3>
+            <div class="genre__panel" id="genre-panel-collab" role="region" aria-labelledby="genre-trigger-collab" hidden>
+              <div class="genre__panel-inner">
+                <div class="work-grid">
+                  <article class="work-card">
+                    <div class="work-card__media"><div class="yt-embed" data-vid="pPT0RLVDzZA" data-title="Radiation Visualization"></div></div>
+                    <div class="work-card__body">
+                      <h3>Radiation Visualization <small>／ Kyushu Univ. (Fujibuchi Lab)</small></h3>
+                      <p>
+                        A medical training app that visualizes invisible radiation distributions in AR and quantifies staff exposure relative to emitting devices.
+                      </p>
+                    </div>
+                  </article>
+
+                  <article class="work-card">
+                    <div class="work-card__media">
+                      <img src="https://vizyoshinaga.sakura.ne.jp/wp/wp-content/uploads/2025/12/chuo_univ2.png"
+                           alt="Underground utility visualization with AR" loading="lazy" />
+                    </div>
+                    <div class="work-card__body">
+                      <h3>Underground Utility AR <small>／ Chuo Univ. (Kashiyama Lab)</small></h3>
+                      <p>
+                        Co-developed AR applications that visualize underground utilities such as pipelines beneath roads, helping prevent accidents during road construction.
+                      </p>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </section>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- HOBBY =========================================================== -->
+    <section class="section" id="hobby">
+      <div class="container">
+        <header class="section__head fade-in">
+          <p class="eyebrow"><span class="dot" aria-hidden="true"></span><span>03 ／ Prototypes</span></p>
+          <h2 class="section__title">Hobby & Prototyping</h2>
+          <p class="section__sub">
+            A growing collection of XR prototypes I keep building on the side. Tap a card to play the video and read the details.
+          </p>
+        </header>
+
+        <ul class="hobby-grid" id="hobby-grid"></ul>
+
+        <div class="section__more fade-in">
+          <button class="btn btn--ghost" type="button" id="hobby-more" aria-controls="hobby-grid" aria-expanded="false">
+            <span>More</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- GITHUB ========================================================== -->
+    <section class="section" id="github">
+      <div class="container">
+        <header class="section__head fade-in">
+          <p class="eyebrow"><span class="dot" aria-hidden="true"></span><span>04 ／ GitHub</span></p>
+          <h2 class="section__title">Open-source Repositories</h2>
+          <p class="section__sub">
+            Unity- and WebXR-based AR/XR samples — open and free to use on GitHub.
+          </p>
+        </header>
+
+        <ul class="repo-grid" id="repo-grid"></ul>
+
+        <div class="section__more fade-in">
+          <a class="btn btn--ghost" href="https://github.com/TakashiYoshinaga" target="_blank" rel="noopener">
+            <span>See all repositories</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER ============================================================ -->
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div>
+        <p class="brand brand--footer">
+          <span class="brand__mark" aria-hidden="true">TY</span>
+          <span>
+            <span class="brand__name-line1">Takashi Yoshinaga</span>
+            <span class="brand__name-line2">Thanks for scrolling.</span>
+          </span>
+        </p>
+      </div>
+      <ul class="social social--footer" aria-label="Social profiles">
+        <li><a href="https://www.linkedin.com/in/takashi-yoshinaga/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a></li>
+        <li><a href="https://twitter.com/Yoshinaga_AR" target="_blank" rel="noopener" aria-label="X (Twitter)">X</a></li>
+        <li><a href="https://www.facebook.com/takashi.yoshinaga.39" target="_blank" rel="noopener" aria-label="Facebook">Facebook</a></li>
+        <li><a href="https://www.youtube.com/@TakashiYoshinaga" target="_blank" rel="noopener" aria-label="YouTube">YouTube</a></li>
+        <li><a href="https://github.com/TakashiYoshinaga" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a></li>
+      </ul>
+      <p class="copyright">© <span id="year"></span> Takashi Yoshinaga</p>
+    </div>
+  </footer>
+
+  <!-- MODAL ============================================================ -->
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true" hidden>
+    <div class="modal__backdrop" data-modal-close></div>
+    <div class="modal__panel" role="document">
+      <button class="modal__close" type="button" data-modal-close aria-label="Close">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <div class="modal__media" id="modal-media"></div>
+      <div class="modal__body">
+        <p class="eyebrow modal__eyebrow" id="modal-eyebrow"></p>
+        <h3 class="modal__title" id="modal-title"></h3>
+        <p class="modal__desc" id="modal-desc"></p>
+        <a class="btn btn--ghost modal__yt" id="modal-yt" href="#" target="_blank" rel="noopener">
+          <span>Open on YouTube</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
