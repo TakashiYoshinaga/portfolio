@@ -117,6 +117,13 @@
           <a href="#hobby" class="btn btn--ghost">
             <span>Browse Prototypes</span>
           </a>
+          <!-- Revealed by script.js only on devices that can actually run
+               WebXR. iOS Safari and desktop browsers never see it. -->
+          <a href="https://takashiyoshinaga.github.io/portfolio-xr/" class="btn btn--xr" id="xr-cta" hidden>
+            <span class="btn__pulse" aria-hidden="true"></span>
+            <span>Enter XR Gallery</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
         </div>
 
         <a href="#about" class="scroll-cue" aria-label="Scroll down">

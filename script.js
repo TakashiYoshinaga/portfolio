@@ -411,6 +411,29 @@
     }[c]));
   }
 
+  /* ---------------------------------------------------
+     XR gallery entry — feature-detected, never UA-sniffed
+
+     portfolio-xr is WebXR-only, so the link is revealed only where
+     an immersive-ar session can actually start: Quest Browser and
+     Android Chrome with ARCore. iOS Safari has no WebXR at all, and
+     sending those visitors to a page that cannot run is worse than
+     not offering it. If Apple ever ships WebXR, this needs no change.
+     --------------------------------------------------- */
+  (async () => {
+    const el = document.getElementById("xr-cta");
+    if (!el || !navigator.xr) return;
+    try {
+      // isSessionSupported can reject rather than resolve false, e.g.
+      // inside a permissions-restricted iframe.
+      if (await navigator.xr.isSessionSupported("immersive-ar")) {
+        el.removeAttribute("hidden");
+      }
+    } catch {
+      /* treat as unsupported */
+    }
+  })();
+
   // Year in footer
   const yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
