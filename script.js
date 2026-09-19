@@ -64,18 +64,18 @@
      Data: GitHub repos
      --------------------------------------------------- */
   const REPOS = [
+    { name: "LocalVisionAI-for-Unity",          d: "Fully offline Unity sample for Android that describes camera photos and answers typed questions on-device with Gemma via LiteRT-LM." },
     { name: "360-to-RealityScan",               d: "Converts 360-degree imagery into assets that can be used with Apple's RealityScan workflow." },
     { name: "MetaXR-SDK-Samples",               d: "Sample projects for building and testing XR interactions with the Meta XR SDK." },
     { name: "QuestArUcoMarkerTracking",         d: "Unity sample for recognising ArUco markers on Meta Quest." },
+    { name: "8thwall-template",                 d: "Minimal WebAR image-tracking template built purely on the MIT-licensed 8th Wall engine and Three.js." },
     { name: "iPhoneCinematicDepthTo3D",          d: "Generates 3D content from depth data captured in iPhone's Cinematic mode." },
     { name: "GeospatialAPI-Unity-StarterKit",    d: "Starter kit for Google ARCore Geospatial API in Unity." },
-    { name: "babylonjs-webxr",                   d: "Sample set for working with WebXR using Babylon.js." },
     { name: "MRTK-Profiles-for-NrealLight",      d: "MRTK profiles tuned for Nreal Light." },
     { name: "iPad-LiDAR-Depth-Sample-for-Unity", d: "Sample for accessing iPad LiDAR depth data from Unity." },
     { name: "Azure-Kinect-Sample-for-Unity",     d: "Sample for using Azure Kinect with Unity." },
     { name: "webxr-hand-tracking-sample",        d: "WebXR hand-tracking sample." },
-    { name: "Oculus-Quest-Interaction-Sample",   d: "Interaction sample for Oculus Quest." },
-    { name: "Oculus-Quest-Input-Sample",         d: "Input sample for Oculus Quest." }
+    { name: "Oculus-Quest-Interaction-Sample",   d: "Interaction sample for Oculus Quest." }
   ];
   /* ---------------------------------------------------
      Header scroll state
