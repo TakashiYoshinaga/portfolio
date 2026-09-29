@@ -10,7 +10,8 @@
      Data: Hobby prototypes
      --------------------------------------------------- */
   const HOBBY = [
-    { id: "57gkK-xGxKQ", t: "Snap2VoxelAR",
+    // thumb: keep the original eye-catch while linking to the newer video.
+    { id: "4kNxpJgsWZQ", thumb: "57gkK-xGxKQ", t: "Snap2VoxelAR",
       d: "Turns a quick real-world capture into voxel-style 3D content and brings it back into the room as an AR object — a playful bridge between physical snapshots and editable spatial blocks.", tags: ["ar", "ai"] },
     { id: "5nlFjTWZSE8", t: "Turn Your Memories into 3D Gaussian Splatting",
       d: "Transforms personal memories into a 3D Gaussian Splatting scene, letting captured moments become navigable volumetric spaces for XR viewing and spatial storytelling.", tags: ["ai", "ar"] },
@@ -221,7 +222,7 @@
         <li>
           <button class="hobby-card" type="button" data-id="${it.id}"
             aria-label="${it.t}">
-            <div class="hobby-card__thumb" style="background-image:url('https://img.youtube.com/vi/${it.id}/hqdefault.jpg')">
+            <div class="hobby-card__thumb" style="background-image:url('https://img.youtube.com/vi/${it.thumb ?? it.id}/hqdefault.jpg')">
               <span class="hobby-card__num">${num}</span>
               <span class="hobby-card__play" aria-hidden="true">
                 <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
