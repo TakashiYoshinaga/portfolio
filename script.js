@@ -31,6 +31,8 @@
       d: "Finds objects across Gaussian Splatting and mesh representations in the same 3D scene. The search works with new scenes at runtime without scene-specific retraining or preparing features in advance.", tags: ["ai", "ar"] },
     { id: "CpNNvYJ_eqo", t: "Spatial Search for Meta Quest",
       d: "Brings the Spatial Search approach to Meta Quest's spatial data. Users search their surroundings in natural language, and the matching points in the Quest's spatial data are highlighted as results.", tags: ["ai", "vr", "sensor"] },
+    { id: "KBflmsotNTc", t: "Spatial Search for Meta Quest Ver.2",
+      d: "The sequel to Spatial Search for Meta Quest. Point clouds now use the camera image as a texture instead of single-color points, so fine detail — even text on a book — is legible. Find real-world objects in natural language with SAM 3.1, and copy-paste them as point clouds.", tags: ["ai", "vr", "sensor"] },
     { id: "12VCCsmIUdE", t: "Interactive Graph Search in AR",
       d: "Explores Neo4j graph data through an AR interface using Cypher-style queries. Users assemble a query ladder to reveal matching subgraphs, narrow down relationships, and explore information connected to a selected entity.", tags: ["ar"] },
     { id: "O7LS4NdFOfQ", t: "Live Scene Analyzer",
