@@ -8,11 +8,14 @@
 
   /* ---------------------------------------------------
      Data: Hobby prototypes
+     next:   id of a follow-up entry, offered as a link inside this entry's modal.
+     hidden: keep out of the grid; reachable only through another entry's `next`.
      --------------------------------------------------- */
   const HOBBY = [
-    // thumb: keep the original eye-catch while linking to the newer video.
-    { id: "4kNxpJgsWZQ", thumb: "57gkK-xGxKQ", t: "Snap2VoxelAR",
-      d: "Turns a quick real-world capture into voxel-style 3D content and brings it back into the room as an AR object — a playful bridge between physical snapshots and editable spatial blocks.", tags: ["ar", "ai"] },
+    { id: "57gkK-xGxKQ", t: "Snap2VoxelAR",
+      d: "Turns a quick real-world capture into voxel-style 3D content and brings it back into the room as an AR object — a playful bridge between physical snapshots and editable spatial blocks.", tags: ["ar", "ai"], next: "4kNxpJgsWZQ" },
+    { id: "4kNxpJgsWZQ", t: "Snap2Voxel & HoloBox",
+      d: "Continues the Snap2VoxelAR prototype. A photo taken with the Quest camera is thrown onto a PC monitor, where Codex understands the image, generates and evaluates voxel art, and sends the result back to both the monitor and the Quest.", tags: ["ar", "ai"], hidden: true },
     { id: "5nlFjTWZSE8", t: "Turn Your Memories into 3D Gaussian Splatting",
       d: "Transforms personal memories into a 3D Gaussian Splatting scene, letting captured moments become navigable volumetric spaces for XR viewing and spatial storytelling.", tags: ["ai", "ar"] },
     { id: "ZE_F2NsOSfQ", t: "Project HoloBox",
@@ -30,9 +33,11 @@
     { id: "ihf4EwHZ0Zc", t: "Spatial Search",
       d: "Finds objects across Gaussian Splatting and mesh representations in the same 3D scene. The search works with new scenes at runtime without scene-specific retraining or preparing features in advance.", tags: ["ai", "ar"] },
     { id: "CpNNvYJ_eqo", t: "Spatial Search for Meta Quest",
-      d: "Brings the Spatial Search approach to Meta Quest's spatial data. Users search their surroundings in natural language, and the matching points in the Quest's spatial data are highlighted as results.", tags: ["ai", "vr", "sensor"] },
+      d: "Brings the Spatial Search approach to Meta Quest's spatial data. Users search their surroundings in natural language, and the matching points in the Quest's spatial data are highlighted as results.", tags: ["ai", "vr", "sensor"], next: "KBflmsotNTc" },
     { id: "KBflmsotNTc", t: "Spatial Search for Meta Quest Ver.2",
-      d: "The sequel to Spatial Search for Meta Quest. Point clouds now use the camera image as a texture instead of single-color points, so fine detail — even text on a book — is legible. Find real-world objects in natural language with SAM 3.1, and copy-paste them as point clouds.", tags: ["ai", "vr", "sensor"] },
+      d: "The sequel to Spatial Search for Meta Quest. Point clouds now use the camera image as a texture instead of single-color points, so fine detail — even text on a book — is legible. Find real-world objects in natural language with SAM 3.1, and copy-paste them as point clouds.", tags: ["ai", "vr", "sensor"], hidden: true },
+    { id: "BAKXGBKgiSI", t: "Spatial Copy-Paste with Finger Framing",
+      d: "Another example of Spatial Search for Meta Quest, with no typing. Frame an object with your fingers and hold focus on its center; AI (SAM 3.1) cuts it out and turns it into 3D, then you grab it by hand and paste it anywhere. No controllers needed.", tags: ["ai", "vr", "sensor"] },
     { id: "12VCCsmIUdE", t: "Interactive Graph Search in AR",
       d: "Explores Neo4j graph data through an AR interface using Cypher-style queries. Users assemble a query ladder to reveal matching subgraphs, narrow down relationships, and explore information connected to a selected entity.", tags: ["ar"] },
     { id: "O7LS4NdFOfQ", t: "Live Scene Analyzer",
@@ -72,7 +77,7 @@
      --------------------------------------------------- */
   const REPOS = [
     { name: "Qwen3-VL-Test",                    d: "Local web app that has Qwen3-VL describe what is happening in each segment of a recorded video via llama.cpp, then shows the descriptions in sync with playback." },
-    { name: "LocalVisionAI-for-Unity",         d: "Fully offline Unity sample for Android that describes camera photos and answers typed questions on-device with Gemma via LiteRT-LM." },
+    { name: "LocalVisionAI-for-Unity",          d: "Fully offline Unity sample for Android that describes camera photos and answers typed questions on-device with Gemma via LiteRT-LM." },
     { name: "360-to-RealityScan",               d: "Converts 360-degree imagery into assets that can be used with Apple's RealityScan workflow." },
     { name: "MetaXR-SDK-Samples",               d: "Sample projects for building and testing XR interactions with the Meta XR SDK." },
     { name: "QuestArUcoMarkerTracking",         d: "Unity sample for recognising ArUco markers on Meta Quest." },
@@ -215,15 +220,16 @@
      Render Hobby grid
      --------------------------------------------------- */
   const FEATURED_COUNT = 8;
+  const LISTED = HOBBY.filter((h) => !h.hidden);
   const hobbyGrid = document.getElementById("hobby-grid");
   const hobbyMore = document.getElementById("hobby-more");
   let isHobbyExpanded = false;
 
   function renderHobby() {
     if (!hobbyGrid) return;
-    const items = isHobbyExpanded ? HOBBY : HOBBY.slice(0, FEATURED_COUNT);
+    const items = isHobbyExpanded ? LISTED : LISTED.slice(0, FEATURED_COUNT);
     hobbyGrid.innerHTML = items.map((it, idx) => {
-      const num = String(HOBBY.indexOf(it) + 1).padStart(2, "0");
+      const num = String(LISTED.indexOf(it) + 1).padStart(2, "0");
       return `
         <li>
           <button class="hobby-card" type="button" data-id="${it.id}"
@@ -256,7 +262,7 @@
     if (hobbyMore) {
       const label = hobbyMore.querySelector("span");
       const icon = hobbyMore.querySelector("svg path");
-      hobbyMore.hidden = HOBBY.length <= FEATURED_COUNT;
+      hobbyMore.hidden = LISTED.length <= FEATURED_COUNT;
       hobbyMore.setAttribute("aria-expanded", isHobbyExpanded ? "true" : "false");
       if (label) label.textContent = isHobbyExpanded ? "Less" : "More";
       if (icon) icon.setAttribute("d", isHobbyExpanded ? "M5 12h14" : "M12 5v14M5 12h14");
@@ -314,17 +320,32 @@
   const modalDesc = document.getElementById("modal-desc");
   const modalEyebrow = document.getElementById("modal-eyebrow");
   const modalYt = document.getElementById("modal-yt");
+  const modalNext = document.getElementById("modal-next");
+  const modalNextLink = document.getElementById("modal-next-link");
+  const modalNextTitle = document.getElementById("modal-next-title");
   let lastFocus = null;
 
-  function openModalFor(videoId) {
+  function openModalFor(videoId, { autoplay = true } = {}) {
     const it = HOBBY.find((h) => h.id === videoId);
     if (!it || !modal) return;
+    // Switching to a follow-up while already open must not overwrite the
+    // element that should regain focus when the modal finally closes.
+    const wasOpen = modal.getAttribute("aria-hidden") === "false";
     modalTitle.textContent = it.t;
     modalDesc.textContent = it.d;
     modalEyebrow.textContent = "Prototype";
     modalYt.href = `https://www.youtube.com/watch?v=${videoId}`;
-    modalMedia.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0" title="${escapeHtml(it.t)}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
-    lastFocus = document.activeElement;
+    const next = it.next && HOBBY.find((h) => h.id === it.next);
+    if (modalNext) {
+      modalNext.hidden = !next;
+      if (next) {
+        modalNextTitle.textContent = next.t;
+        modalNextLink.dataset.id = next.id;
+      }
+    }
+    modalMedia.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${videoId}?autoplay=${autoplay ? 1 : 0}&rel=0" title="${escapeHtml(it.t)}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+    if (!wasOpen) lastFocus = document.activeElement;
+    modal.querySelector(".modal__panel").scrollTop = 0;
     modal.hidden = false;
     requestAnimationFrame(() => modal.setAttribute("aria-hidden", "false"));
     document.body.style.overflow = "hidden";
@@ -346,6 +367,9 @@
   if (modal) {
     modal.querySelectorAll("[data-modal-close]").forEach((el) =>
       el.addEventListener("click", closeModal)
+    );
+    if (modalNextLink) modalNextLink.addEventListener("click", () =>
+      openModalFor(modalNextLink.dataset.id, { autoplay: false })
     );
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape" && modal.getAttribute("aria-hidden") === "false") closeModal();

@@ -1197,6 +1197,44 @@ h1, h2, h3, h4 {
 }
 .modal__desc { color: var(--text-muted); margin: 0 0 1.5rem; line-height: 1.7; }
 
+/* Pointer to a follow-up entry; shown only when the entry has `next`. */
+.modal__next {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .4rem 1rem;
+  margin: 0 0 1.5rem;
+  padding: .85rem 1rem;
+  background: var(--accent-soft);
+  border-left: 2px solid var(--accent);
+  border-radius: var(--radius-sm);
+}
+.modal__next[hidden] { display: none; }
+.modal__next-label {
+  font-family: var(--font-display);
+  font-size: .72rem;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--accent-2);
+}
+.modal__next-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: 0;
+  background: none;
+  border: 0;
+  border-bottom: 1px solid var(--text);
+  font-family: var(--font-display);
+  font-size: .95rem;
+  font-weight: 600;
+  color: var(--text);
+  text-align: left;
+  cursor: pointer;
+  transition: color .2s ease, border-color .2s ease;
+}
+.modal__next-link:hover { color: var(--accent-2); border-color: var(--accent-2); }
+
 /* =========================================================
    Footer
    ========================================================= */
