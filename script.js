@@ -8,7 +8,8 @@
 
   /* ---------------------------------------------------
      Data: Hobby prototypes
-     next:   id of a follow-up entry, offered as a link inside this entry's modal.
+     next:   id of a follow-up entry, offered as a link inside this entry's modal
+             (the follow-up's modal links back to this entry automatically).
      hidden: keep out of the grid; reachable only through another entry's `next`.
      --------------------------------------------------- */
   const HOBBY = [
@@ -320,10 +321,25 @@
   const modalDesc = document.getElementById("modal-desc");
   const modalEyebrow = document.getElementById("modal-eyebrow");
   const modalYt = document.getElementById("modal-yt");
-  const modalNext = document.getElementById("modal-next");
-  const modalNextLink = document.getElementById("modal-next-link");
-  const modalNextTitle = document.getElementById("modal-next-title");
+  const modalVersions = document.getElementById("modal-versions");
+  const modalPrev = {
+    row: document.getElementById("modal-prev"),
+    link: document.getElementById("modal-prev-link"),
+    title: document.getElementById("modal-prev-title"),
+  };
+  const modalNext = {
+    row: document.getElementById("modal-next"),
+    link: document.getElementById("modal-next-link"),
+    title: document.getElementById("modal-next-title"),
+  };
   let lastFocus = null;
+
+  function setVersionLink(ref, target) {
+    ref.row.hidden = !target;
+    if (!target) return;
+    ref.title.textContent = target.t;
+    ref.link.dataset.id = target.id;
+  }
 
   function openModalFor(videoId, { autoplay = true } = {}) {
     const it = HOBBY.find((h) => h.id === videoId);
@@ -335,13 +351,13 @@
     modalDesc.textContent = it.d;
     modalEyebrow.textContent = "Prototype";
     modalYt.href = `https://www.youtube.com/watch?v=${videoId}`;
+    // The previous version is derived from whichever entry points at this one.
+    const prev = HOBBY.find((h) => h.next === it.id);
     const next = it.next && HOBBY.find((h) => h.id === it.next);
-    if (modalNext) {
-      modalNext.hidden = !next;
-      if (next) {
-        modalNextTitle.textContent = next.t;
-        modalNextLink.dataset.id = next.id;
-      }
+    if (modalVersions) {
+      modalVersions.hidden = !prev && !next;
+      setVersionLink(modalPrev, prev);
+      setVersionLink(modalNext, next);
     }
     modalMedia.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${videoId}?autoplay=${autoplay ? 1 : 0}&rel=0" title="${escapeHtml(it.t)}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
     if (!wasOpen) lastFocus = document.activeElement;
@@ -368,9 +384,11 @@
     modal.querySelectorAll("[data-modal-close]").forEach((el) =>
       el.addEventListener("click", closeModal)
     );
-    if (modalNextLink) modalNextLink.addEventListener("click", () =>
-      openModalFor(modalNextLink.dataset.id, { autoplay: false })
-    );
+    [modalPrev, modalNext].forEach(({ link }) => {
+      if (link) link.addEventListener("click", () =>
+        openModalFor(link.dataset.id, { autoplay: false })
+      );
+    });
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape" && modal.getAttribute("aria-hidden") === "false") closeModal();
     });
